@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="https://unpkg.com/vue-router"></script>
+</head>
+<body>
+
+    <!-- bradcam_area_start -->
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcam_text text-center">
+                        <h3>About Me</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end -->
+    <!-- service_area_start  -->
+    <div class="service_area">
+        <div class="container">
+            <!--<div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div id="name" class="section_title text-center mb-95">
+                        <h3>Services for every life</h3>
+                        <p>{{ contentmsg }}</p>
+                    </div>
+                </div>
+            </div>-->
+            <!-- pet_care_area_start  -->
+            <div class="pet_care_area" id="animalInf">
+                <div class="container" v-for="animal in serverAnimals">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="pet_thumb">
+                                <img width="200" v-bind:src="animal.album_file" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 offset-lg-1 col-md-6">
+                            <div class="pet_info">
+                                <div class="section_title">
+                                    <!--<h3>
+                                        <span>We care your pet </span> <br>
+                                        As you care
+                                    </h3>-->
+                                    <!--入所天數：{{}} Now - animal_createtime-->
+                                    <!--晶片號碼：{{}}
+                                    進所原因：{{}}-->
+                                    <p>入所日期：{{animal.animal_createtime}}                                                  </p>
+                                    <!--<p>是否開放認領養：{{}}適合認養</p>-->
+                                    <p>收容編號：{{animal.animal_subid}}                                                              </p>
+                                    <p>動物別：{{animal.animal_kind}}                                                          </p>
+                                    <!--<p>動物品種：混種貓</p>-->
+                                    <p>毛色：{{animal.animal_colour}}                                 </p>
+                                    <!--<p>來源行政區：{{}}animal_area_pkid →</p>-->
+                                    <p>動物性別：{{ animal.animal_sex == "M"? "公": animal.animal_sex == "F" ? "母" : "未輸入"}}</p>
+                                    <!--<p>動物名：{{}}</p>-->
+                                    <p>公告收容所：{{animal.animal_place}}   </p>
+                                    <p>收容所電話：{{animal.shelter_tel }}   </p>
+                                    <p>收容所地址：{{animal.shelter_address}}</p>
+                                    <p>
+                                        描述：{{animal.animal_remark}}
+                                    <p>
+                                        <a href="https://asms.coa.gov.tw/AmlApp/Admin_A01/OutApplyEdit.aspx" target="_blank" class="boxed-btn3">我要領養</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- pet_care_area_end  -->
+        </div>
+    </div>
+    <!-- service_area_end -->
+
+</body>
+</html>
+<script type="text/javascript">
+    const cors = 'https://cors-anywhere.herokuapp.com/'; // use cors-anywhere to fetch api data
+    const url = 'https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL';
+
+    //var vtitle = new Vue({//create vue instance
+    //    el: '#name',//element: id=name
+    //    data: {
+    //        contentmsg: '領養動物資訊',//data and the DOM are linked
+    //    }
+    //})
+
+    const router = new VueRouter({
+        mode: 'history',
+        routes: [],
+    });
+
+    var vanimalInf = new Vue({
+        el: '#animalInf',
+        router,
+        ready: function () {
+        },
+        data: {
+            animal_subid: '',
+            titlemsg: '點擊後從政府server端取得open data',//linked
+            serverAnimals: null,
+            cboAnimalAreaPkid: '',
+            cboAnimalShelter: '',
+            cboAnimalStatus: '',
+            cboAnimalKind: '',
+            cboAnimalSex: '',
+            cboAnimalBodytype: '',
+            cboAnimalAge: '',
+            cboAnimalSterilization: '',
+        },
+        computed: {
+        },
+        watch: {
+        },
+        created: function (type) {
+            this.serverAnimals = null;
+            this.seen = true;
+            if (type === 'submit') this.initial();
+
+
+            var urlGet = '';
+            if (this.$route.query.animal_subid !== 'undefined')
+                urlGet = url + "&animal_subid=" + this.$route.query.animal_subid;
+
+            urlGet = urlGet + "&$top=10&$skip=0";
+
+            //if (this.cboAnimalAreaPkid.length !== 0) {
+            //    this.cboAnimalAreaPkid.forEach(function (item, index, array) {
+            //        urlGet += "&animal_area_pkid=" + item;
+            //    });
+            console.log(urlGet);
+            axios.get(`${cors}${urlGet}`)
+                .then((response) => { this.serverAnimals = response.data })
+
+            $('#pagination').show();
+
+        }
+    })
+
+
+</script>
