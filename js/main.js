@@ -281,7 +281,7 @@ dots:false,
   }
 });
 
-if (document.getElementById('default-select')) {
+if ($('.default-select')) {
   $('select').niceSelect();
 }
 

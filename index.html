@@ -1,11 +1,16 @@
-﻿
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
 
-<!DOCTYPE html>
-<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Animal</title>
+    <title>領養動物</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
     <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -18,7 +23,266 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
 
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <!-- header_start  -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="short_contact_list">
+                                <ul>
+                                    <!--<li><a href="#">Mon - Sat 10:00 - 7:00</a></li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-4 ">
+                            <div class="social_media_links">
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-pinterest-p"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <!--<img src="img/logo.png" alt="">-->
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">首頁</a></li>
+                                        <li>
+                                            <a>說明 <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li>
+                                                    <a href="https://asms.coa.gov.tw/AmlApp/Admin_A01/OutApplyEdit.aspx" target="_blank">愛心犬貓認養須知 </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header_start  -->
+
+    <div class="slider_area">
+        <div class="single_slider slider_bg_1 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="slider_text">
+                            <h3>想要 <br> <span>領養一隻你的寵物嗎？</span></h3>
+                            <p>查詢你感興趣的動物朋友 <br> 讓牠走近你，成為你的家人吧。</p>
+                            <!--<a href="contact.html" class="boxed-btn4">Contact Us</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dog_thumb d-none d-lg-block">
+                <img src="img/banner/dog.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+    <div class="service_area">
+        <!-- Start Align Area -->
+        <div class="whole-wrap">
+            <div class="container box_1170">
+                <div class="section-top-border">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8">
+                            <h3 class="mb-30">查詢條件</h3>
+                            <form action="#">
+                                <div class="input-group-icon mt-10">
+                                    <div class="form-select" id="animalAreaPkid">
+                                        <select v-model="selected">
+                                            <option value="3">新北市</option>
+                                            <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-group-icon mt-10">
+                                    <div class="single-element-widget mt-30">
+                                        <div class="form-select" id="animalShelter">
+                                            <select v-model="selected">
+                                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                                /o
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><div class="input-group-icon mt-10">
+                                    <div class="single-element-widget mt-30">
+                                        <div class="form-select" id="animalStatus">
+                                            <select v-model="selected">
+                                                <option value="OPEN">開放認養</option>
+                                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group-icon mt-10">
+                                    <div class="single-element-widget mt-30">
+                                        <div class="form-select" id="animalKind">
+                                            <select v-model="selected">
+                                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group-icon mt-10">
+                                    <div class="single-element-widget mt-30">
+                                        <div class="form-select" id="animalSex">
+                                            <select v-model="selected">
+                                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group-icon mt-10">
+                                    <div class="single-element-widget mt-30">
+                                        <div class="form-select" id="animalBodyType">
+                                            <select v-model="selected">
+                                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group-icon mt-10">
+                                    <div class="single-element-widget mt-30">
+                                        <div class="form-select" id="animalAge">
+                                            <select v-model="selected">
+                                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group-icon mt-10">
+                                    <div class="single-element-widget mt-30">
+                                        <div class="form-select" id="animalSterilization">
+                                            <select v-model="selected">
+                                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group-icon mt-10">
+                                    <div class="submit text-right" id="queryButton">
+                                        <div class="button-group-area mt-40">
+                                            <a href="#" v-on:click="loadData('submit')" class="genric-btn info circle">搜尋動物</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="single-element-widget mt-30 text-right">
+                        <div class="form-select" id="countPerPage" v-if="seenCountPerPage">
+                            每頁筆數
+                            <select v-model="selected" v-on:change="onChange">
+                                <option value="90">90</option>
+                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                            </select>
+                        </div>
+                        <div id="pagination" v-if="seenPagination">
+                            <a href="#" v-on:click="prePage">Prev</a>資料第{{currentPage}}頁<a href="#" v-on:click="nextPage">Next</a>&nbsp;
+                        </div>
+                    </div>
+                    <div id="tblAnimals">
+                        <div class="row justify-content-center">
+                            <div v-for="animal in serverAnimals" class="col-lg-4 col-md-6">
+                                <a v-bind:href="'detail.html?animal_subid=' + animal.animal_subid" target="_blank">
+                                    <div class="single_service">
+                                        <div class="service_thumb d-flex align-items-center justify-content-center">
+                                            <div class="album_file">
+                                                <img width="200" height="200" v-bind:src="animal.album_file" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="service_content text-center">
+                                            <h3>
+                                                {{animal.animal_colour}}{{animal.animal_age == "CHILD" ?　"幼年" : "成年"}}{{ animal.animal_kind == "狗" ? "犬" : animal.animal_kind }}
+                                            </h3>
+                                            <p>
+                                                {{animal.animal_bodytype == "SMALL" ? "小型" : animal.animal_bodytype == "MEDIUM" ? "中型" : "大型"}}
+                                            </p>
+                                            <p>
+                                                {{animal.animal_subid}}
+                                            </p>
+                                            <p>
+                                                性別：{{ animal.animal_sex == "M"? "公": animal.animal_sex == "F" ? "母" : "未輸入"}}
+                                            </p>
+                                            <p>
+                                                實際所在地：{{animal.animal_place}}
+                                            </p>
+                                            <p>
+                                                連絡電話：{{animal.shelter_tel}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Align Area -->
+    </div>
+    <!-- footer_start  -->
+    <footer class="footer">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="bordered_1px"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end  -->
     <!-- JS here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
@@ -39,393 +303,18 @@
     <script src="js/plugins.js"></script>
     <script src="js/gijgo.min.js"></script>
 
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
-    <div class="header-area ">
-        <div class="header-top_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="short_contact_list">
-                            <ul>
-                                <!--<li><a href="#">Mon - Sat 10:00 - 7:00</a></li>-->
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-4 ">
-                        <div class="social_media_links">
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-pinterest-p"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="sticky-header" class="main-header-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-3 col-lg-3">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-9 col-lg-9">
-                        <div class="main-menu  d-none d-lg-block">
-                            <nav>
-                                <ul id="navigation">
-                                    <li><a href="index.html">首頁</a></li>
-                                    <li>
-                                        <a>說明 <i class="ti-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li>
-                                                <a href="https://asms.coa.gov.tw/AmlApp/Admin_A01/OutApplyEdit.aspx" target="_blank">愛心犬貓認養須知 </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</head>
-<body>
-    <div class="slider_area">
-        <div class="single_slider slider_bg_1 d-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-md-6">
-                        <div class="slider_text">
-                            <h3>想要 <br> <span>領養一隻你的寵物嗎？</span></h3>
-                            <p>查詢你感興趣的動物朋友 <br> 讓牠走近你，成為你的家人吧。</p>
-                            <!--<a href="contact.html" class="boxed-btn4">Contact Us</a>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dog_thumb d-none d-lg-block">
-                <img src="img/banner/dog.png" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- slider_area_end -->
-    <!-- service_area_start  -->
-    <div class="service_area">
-        <div class="container">
-            <div id="tblAnimals">
-                <div class="progress-table-wrap">
-                    <h3 class="mb-30">查詢條件</h3>
-                    <div class="progress-table">
-                        <div class="table-row">
-                            <div class="country">動物所屬縣市</div>
-                            <div class="default-select" id="default-select">
-                                <select v-model="cboAnimalAreaPkid">
-                                    <option value="2">臺北市</option>
-                                    <option value="3">新北市</option>
-                                    <option value="4">基隆市</option>
-                                    <option value="5">宜蘭縣</option>
-                                    <option value="6">桃園縣</option>
-                                    <option value="7">新竹縣</option>
-                                    <option value="8">新竹市</option>
-                                    <option value="9">苗栗縣</option>
-                                    <option value="10">臺中市</option>
-                                    <option value="11">彰化縣</option>
-                                    <option value="12">南投縣</option>
-                                    <option value="13">雲林縣</option>
-                                    <option value="14">嘉義縣</option>
-                                    <option value="15">嘉義市</option>
-                                    <option value="16">臺南市</option>
-                                    <option value="17">高雄市</option>
-                                    <option value="18">屏東縣</option>
-                                    <option value="19">花蓮縣</option>
-                                    <option value="20">臺東縣</option>
-                                    <option value="21">澎湖縣</option>
-                                    <option value="22">金門縣</option>
-                                    <option value="23">連江縣</option>
-                                </select>
-                            </div>
-                        </div>
 
-                        <div class="table-row">
-                            <div class="country">動物狀態</div>
-                            <div class="single-element-widget mt-30">
-                                <div class="default-select" id="default-select">
-                                    <select v-model="cboAnimalStatus">
-                                        <option value="">請選擇</option>
-                                        <option value="NONE">未公告</option>
-                                        <option value="OPEN">開放認養</option>
-                                        <option value="ADOPTED">已認養</option>
-                                        <option value="OTHER">其他</option>
-                                        <option value="DEAD">死亡</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="table-row">
-                            <div class="country">所屬收容所</div>
-                            <div class="country">
-                                <div class="single-element-widget mt-30">
-                                    <div class="default-select" id="default-select">
-                                        <select v-model="cboAnimalShelter">
-                                            <option value="">請選擇</option>
-                                            <option value="48">基隆市寵物銀行 			</option>
-                                            <option value="49">臺北市動物之家 			</option>
-                                            <option value="50">新北市板橋區公立動物之家 </option>
-                                            <option value="51">新北市新店區公立動物之家 </option>
-                                            <option value="53">新北市中和區公立動物之家 </option>
-                                            <option value="55">新北市淡水區公立動物之家 </option>
-                                            <option value="56">新北市瑞芳區公立動物之家 </option>
-                                            <option value="58">新北市五股區公立動物之家 </option>
-                                            <option value="59">新北市八里區公立動物之家 </option>
-                                            <option value="60">新北市三芝區公立動物之家 </option>
-                                            <option value="61">桃園市動物保護教育園區 	</option>
-                                            <option value="62">新竹市動物收容所 		</option>
-                                            <option value="63">新竹縣動物收容所 		</option>
-                                            <option value="67">臺中市動物之家南屯園區 	</option>
-                                            <option value="68">臺中市動物之家后里園區 	</option>
-                                            <option value="69">彰化縣流浪狗中途之家 	</option>
-                                            <option value="70">南投縣公立動物收容所</option>
-                                            <option value="71">嘉義市流浪犬收容中心</option>
-                                            <option value="72">嘉義縣流浪犬中途之家</option>
-                                            <option value="73">臺南市動物之家灣裡站</option>
-                                            <option value="74">臺南市動物之家善化站</option>
-                                            <option value="75">高雄市壽山動物保護教育園區</option>
-                                            <option value="76">高雄市燕巢動物保護關愛園區</option>
-                                            <option value="77">屏東縣流浪動物收容所</option>
-                                            <option value="78">宜蘭縣流浪動物中途之家</option>
-                                            <option value="79">花蓮縣流浪犬中途之家</option>
-                                            <option value="80">臺東縣動物收容中心</option>
-                                            <option value="81">連江縣流浪犬收容中心</option>
-                                            <option value="82">金門縣動物收容中心</option>
-                                            <option value="83">澎湖縣流浪動物收容中心</option>
-                                            <option value="89">雲林縣流浪動物收容所</option>
-                                            <option value="92">新北市政府動物保護防疫處</option>
-                                            <option value="96">苗栗縣生態保育教育中心</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-row">
-                            <div class="country">類型</div>
-                            <div class="single-element-widget mt-30">
-                                <div class="default-select" id="default-select">
-                                    <select v-model="cboAnimalKind">
-                                        <option value="">不拘</option>
-                                        <option value="狗">狗</option>
-                                        <option value="貓">貓</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-row">
-                            <div class="country">動物性別</div>
-                            <div class="single-element-widget mt-30">
-                                <div class="default-select" id="default-select">
-                                    <select v-model="cboAnimalSex">
-                                        <option value="M">公</option>
-                                        <option value="F">母</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-row">
-                            <div class="country">體型</div>
-                            <div class="single-element-widget mt-30">
-                                <div class="default-select" id="default-select">
-                                    <select v-model="cboAnimalBodytype">
-                                        <option value="">不拘</option>
-                                        <option value="SMALL">小型</option>
-                                        <option value="MEDIUM">中型</option>
-                                        <option value="BIG">大型</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-row">
-                            <div class="country">年紀</div>
-                            <div class="single-element-widget mt-30">
-                                <div class="default-select" id="default-select">
-                                    <select v-model="cboAnimalAge">
-                                        <option value="">不拘</option>
-                                        <option value="CHILD">幼年</option>
-                                        <option value="ADULT">成年</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-row">
-                            <div class="country">是否已絕育</div>
-                            <div class="single-element-widget mt-30">
-                                <div class="default-select" id="default-select">
-                                    <select v-model="cboAnimalSterilization">
-                                        <option value="">請選擇</option>
-                                        <option value="T">是</option>
-                                        <option value="F">否</option>
-                                        <option value="N">未輸入</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-row">
-                            <div class="submit text-center">
-                                <div class="button-group-area mt-40">
-                                    <a href="#" v-on:click="loadData('submit')" class="genric-btn info circle">搜尋動物</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br />
-
-                <div class="single-element-widget mt-30 text-right" id="pagination" v-if="seen">
-                    <a href="#" v-on:click="prePage">Prev</a>資料第{{currentPage}}頁<a href="#" v-on:click="nextPage">Next</a>&nbsp;
-                    每頁筆數
-                    <div class="default-select" id="default-select">
-                        <select v-model="cboCountPerPage" v-on:change="loadData">
-                            <option value="300">300</option>
-                            <option value="600">600</option>
-                            <option value="900">900</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div v-for="animal in serverAnimals" class="col-lg-4 col-md-6">
-                        <a v-bind:href="'detail.html?animal_subid=' + animal.animal_subid" target="_blank">
-                            <div class="single_service">
-                                <div class="service_thumb d-flex align-items-center justify-content-center">
-                                    <div class="album_file">
-                                        <img width="200" height="200" v-bind:src="animal.album_file" alt="">
-                                    </div>
-                                </div>
-                                <div class="service_content text-center">
-                                    <h3>
-                                        {{animal.animal_colour}}{{animal.animal_age == "CHILD" ?　"幼年" : "成年"}}{{ animal.animal_kind == "狗" ? "犬" : animal.animal_kind }}
-                                    </h3>
-                                    <p>
-                                        {{animal.animal_bodytype == "SMALL" ? "小型" : animal.animal_bodytype == "MEDIUM" ? "中型" : "大型"}}
-                                    </p>
-                                    <p>
-                                        {{animal.animal_subid}}
-                                    </p>
-                                    <p>
-                                        性別：{{ animal.animal_sex == "M"? "公": animal.animal_sex == "F" ? "母" : "未輸入"}}
-                                    </p>
-                                    <p>
-                                        實際所在地：{{animal.animal_place}}
-                                    </p>
-                                    <p>
-                                        連絡電話：{{animal.shelter_tel}}
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- service_area_end -->
-
+    <script src="js/myVue.js"></script>
 </body>
 </html>
-<script type="text/javascript">
-    const cors = 'https://cors-anywhere.herokuapp.com/'; // use cors-anywhere to fetch api data
-    const url = 'https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL';
-
-    var vtblAnimals = new Vue({
-        el: '#tblAnimals',
-        ready: function () {
-        },
-        data: {
-            titlemsg: '點擊後從政府server端取得open data',//linked
-            serverAnimals: null,
-            cboAnimalAreaPkid: '3',
-            cboAnimalShelter: '',
-            cboAnimalStatus: 'OPEN',
-            cboAnimalKind: '',
-            cboAnimalSex: 'M',
-            cboAnimalBodytype: '',
-            cboAnimalAge: '',
-            cboAnimalSterilization: '',
-            cboCountPerPage: 300,
-            currentPage: 1,
-            seen: false,
-        },
-        computed: {
-        },
-        watch: {
-        },
-        methods: {
-            loadData: function (type) {
-                this.serverAnimals = null;
-                this.seen = true;
-                if (type === 'submit') this.initial();
-
-                var urlGet = '';
-                if (this.cboAnimalAreaPkid !== '')
-                    urlGet = url + "&animal_area_pkid=" + this.cboAnimalAreaPkid;
-                if (this.cboAnimalShelter !== '')
-                    urlGet = urlGet + "&animal_shelter_pkid=" + this.cboAnimalShelter;
-                if (this.cboAnimalStatus !== '')
-                    urlGet = urlGet + "&animal_status=" + this.cboAnimalStatus;
-                if (this.cboAnimalKind !== '')
-                    urlGet = urlGet + "&animal_kind=" + this.cboAnimalKind;
-                if (this.cboAnimalSex !== '')
-                    urlGet = urlGet + "&animal_sex=" + this.cboAnimalSex;
-                if (this.cboAnimalBodytype !== '')
-                    urlGet = urlGet + "&animal_bodytype=" + this.cboAnimalBodytype;
-                if (this.cboAnimalAge !== '')
-                    urlGet = urlGet + "&animal_age=" + this.cboAnimalAge;
-                if (this.cboAnimalSterilization !== '')
-                    urlGet = urlGet + "&animal_sterilization=" + this.cboAnimalSterilization;
-
-                urlGet = urlGet + "&$top=" + this.cboCountPerPage + "&$skip=" + ((this.currentPage - 1) * this.cboCountPerPage);
-
-                //if (this.cboAnimalAreaPkid.length !== 0) {
-                //    this.cboAnimalAreaPkid.forEach(function (item, index, array) {
-                //        urlGet += "&animal_area_pkid=" + item;
-                //    });
-                console.log(urlGet);
-                axios.get(`${cors}${urlGet}`)
-                    .then((response) => { this.serverAnimals = response.data })
-
-                $('#pagination').show();
-
-            },
-            prePage: function () {
-                if (this.currentPage > 1) this.currentPage = this.currentPage - 1;
-                this.loadData();
-            },
-            nextPage: function () {
-                this.currentPage = this.currentPage + 1;
-                this.loadData();
-            },
-            initial: function () {
-                this.cboCountPerPage = 300;
-                this.currentPage = 1;
-            }
-        }
-    })
-
-
-</script>
