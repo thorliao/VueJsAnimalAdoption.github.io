@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,14 +57,6 @@
     <!-- service_area_start  -->
     <div class="service_area">
         <div class="container">
-            <!--<div class="row justify-content-center ">
-                <div class="col-lg-7 col-md-10">
-                    <div id="name" class="section_title text-center mb-95">
-                        <h3>Services for every life</h3>
-                        <p>{{ contentmsg }}</p>
-                    </div>
-                </div>
-            </div>-->
             <!-- pet_care_area_start  -->
             <div class="pet_care_area" id="animalInf">
                 <div class="container" v-for="animal in serverAnimals">
@@ -86,15 +76,16 @@
                                     <!--入所天數：{{}} Now - animal_createtime-->
                                     <!--晶片號碼：{{}}
                                     進所原因：{{}}-->
-                                    <p>入所日期：{{animal.animal_createtime}}                                                  </p>
+                                    <p>入所日期：{{animal.animal_createtime}}</p>
                                     <!--<p>是否開放認領養：{{}}適合認養</p>-->
-                                    <p>收容編號：{{animal.animal_subid}}                                                              </p>
-                                    <p>動物別：{{animal.animal_kind}}                                                          </p>
+                                    <p>收容編號：{{animal.animal_subid}}&nbsp;(複製若要收養請複製此編號)</p>
+                                    <p>動物別：{{animal.animal_kind}}</p>
                                     <!--<p>動物品種：混種貓</p>-->
-                                    <p>毛色：{{animal.animal_colour}}                                 </p>
+                                    <p>毛色：{{animal.animal_colour}}</p>
                                     <!--<p>來源行政區：{{}}animal_area_pkid →</p>-->
                                     <p>動物性別：{{ animal.animal_sex == "M"? "公": animal.animal_sex == "F" ? "母" : "未輸入"}}</p>
                                     <!--<p>動物名：{{}}</p>-->
+
                                     <p>公告收容所：{{animal.animal_place}}   </p>
                                     <p>收容所電話：{{animal.shelter_tel }}   </p>
                                     <p>收容所地址：{{animal.shelter_address}}</p>
@@ -117,15 +108,9 @@
 </body>
 </html>
 <script type="text/javascript">
+
     const cors = 'https://cors-anywhere.herokuapp.com/'; // use cors-anywhere to fetch api data
     const url = 'https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL';
-
-    //var vtitle = new Vue({//create vue instance
-    //    el: '#name',//element: id=name
-    //    data: {
-    //        contentmsg: '領養動物資訊',//data and the DOM are linked
-    //    }
-    //})
 
     const router = new VueRouter({
         mode: 'history',
@@ -139,20 +124,7 @@
         },
         data: {
             animal_subid: '',
-            titlemsg: '點擊後從政府server端取得open data',//linked
             serverAnimals: null,
-            cboAnimalAreaPkid: '',
-            cboAnimalShelter: '',
-            cboAnimalStatus: '',
-            cboAnimalKind: '',
-            cboAnimalSex: '',
-            cboAnimalBodytype: '',
-            cboAnimalAge: '',
-            cboAnimalSterilization: '',
-        },
-        computed: {
-        },
-        watch: {
         },
         created: function (type) {
             this.serverAnimals = null;
@@ -166,10 +138,6 @@
 
             urlGet = urlGet + "&$top=10&$skip=0";
 
-            //if (this.cboAnimalAreaPkid.length !== 0) {
-            //    this.cboAnimalAreaPkid.forEach(function (item, index, array) {
-            //        urlGet += "&animal_area_pkid=" + item;
-            //    });
             console.log(urlGet);
             axios.get(`${cors}${urlGet}`)
                 .then((response) => { this.serverAnimals = response.data })
