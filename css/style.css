@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,600,700|Poppins:200,200i,300,300i,400,500,500i,600,700,800,900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,600,700|Poppins:200,200i,300,300i,400,500,500i,600,700,800,900&display=swap");
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
 /* line 1, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_extend.scss */
 .flex-center-start {
   display: -webkit-box;
@@ -35,7 +37,7 @@
 /* 1. Theme default css */
 /* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -118,7 +120,7 @@ p {
   line-height: 30px;
   color: #909092;
   margin-bottom: 13px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
 }
 
 /* line 66, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
@@ -1582,7 +1584,7 @@ h3 {
 
 /* line 37, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_about.scss */
 .about_area .about_info .opening_hour span {
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
   color: #252219;
   font-size: 20px;
   margin-left: 6px;
@@ -1995,7 +1997,7 @@ h3 {
 
 /* line 29, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_team.scss */
 .team_area .single_team .member_name .mamber_inner h4 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
   font-weight: 700;
   color: #222222;
   margin-bottom: 0;
@@ -2050,7 +2052,7 @@ h3 {
   border-bottom: 1px solid #c1c1c1;
   padding-left: 10px;
   height: 50px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
   color: #000;
   background: transparent;
 }
@@ -2059,7 +2061,7 @@ h3 {
 .make_apppointment_area .appoint_ment_form form .single_field input::placeholder, .make_apppointment_area .appoint_ment_form form .single_field textarea::placeholder {
   color: #96989a;
   font-weight: 400;
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
 }
 
 /* line 29, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_make_apointment.scss */
@@ -2829,7 +2831,7 @@ h3 {
   border: none;
   border: 1px solid #E8E8E8;
   border-radius: 30px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
   padding-right: 120px;
 }
 
@@ -2862,7 +2864,7 @@ h3 {
   right: 5px;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
 }
 
 /* line 174, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_footer.scss */
@@ -2870,7 +2872,7 @@ h3 {
   font-size: 14px;
   color: #AAB1B7;
   line-height: 26px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
 }
 
 /* line 180, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_footer.scss */
@@ -3074,7 +3076,7 @@ h3 {
   cursor: pointer;
   display: block;
   float: left;
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
   font-weight: normal;
   width: 100% !important;
   /* height: 42px; */
@@ -3339,7 +3341,7 @@ h3 {
   font-size: 20px;
   color: #808080;
   font-weight: 400;
-  font-family: "Open Sans", sans-serif;
+  font-family: "cwTeXYen", sans-serif;
   display: block;
   margin-bottom: 0;
 }
