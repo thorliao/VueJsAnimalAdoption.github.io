@@ -390,7 +390,7 @@ h3 {
 
 /* line 29, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_btn.scss */
 .boxed-btn3 {
-  font-size: 18px;
+  font-size: 32px;
   font-weight: 500;
   color: #fff;
   padding: 17px 55px;
@@ -3265,8 +3265,8 @@ h3 {
 .pet_care_area .pet_info .section_title p {
   color: #66666f;
   line-height: 28px;
-  font-size: 16px;
-  margin-bottom: 54px;
+  font-size: 22px;
+  /*margin-bottom: 54px;*/
   margin-top: 30px;
 }
 
@@ -3683,7 +3683,7 @@ h6 {
   outline: none;
   line-height: 40px;
   padding: 0 30px;
-  font-size: .8em;
+  font-size: 1.3em;
   text-align: center;
   text-decoration: none;
   font-weight: 500;
