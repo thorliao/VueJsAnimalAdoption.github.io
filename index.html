@@ -1,5 +1,4 @@
-﻿<!doctype html>
-<html class="no-js" lang="zxx">
+﻿<html class="" lang="zxx">
 
 <head>
     <meta charset="utf-8">
@@ -8,24 +7,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
     <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/themify-icons.css">
     <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/gijgo.css">
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
-
 <body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -44,20 +33,18 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-4 ">
-                            <div class="social_media_links">
+                            <!-- <div class="social_media_links">
                                 <a href="#">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                                 <a href="#">
                                     <i class="fa fa-pinterest-p"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
                                 </a>
                                 <a href="#">
                                     <i class="fa fa-linkedin"></i>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -99,7 +86,6 @@
         </div>
     </header>
     <!-- header_start  -->
-
     <div class="slider_area">
         <div class="single_slider slider_bg_1 d-flex align-items-center">
             <div class="container">
@@ -132,7 +118,6 @@
                                     <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
                                     <div class="form-select" id="animalAreaPkid">
                                         <select v-model="selected">
-                                            <option value="3">新北市</option>
                                             <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
                                         </select>
                                     </div>
@@ -143,20 +128,18 @@
                                         <div class="form-select" id="animalShelter">
                                             <select v-model="selected">
                                                 <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
-                                                /o
                                             </select>
                                         </div>
                                     </div>
                                 </div><div class="input-group-icon mt-10">
-                                              <div class="icon"><i class="fa fa-heartbeat" aria-hidden="true"></i></div>
-                                          <div class="single-element-widget mt-30">
-                                              <div class="form-select" id="animalStatus">
-                                                  <select v-model="selected">
-                                                      <option value="OPEN">開放認養</option>
-                                                      <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
-                                                  </select>
-                                              </div>
-                                          </div>
+                                    <div class="icon"><i class="fa fa-heartbeat" aria-hidden="true"></i></div>
+                                    <div class="single-element-widget mt-30">
+                                        <div class="form-select" id="animalStatus">
+                                            <select v-model="selected">
+                                                <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="input-group-icon mt-10">
                                     <div class="single-element-widget mt-30">
@@ -234,7 +217,7 @@
                     <div id="tblAnimals">
                         <div class="row justify-content-center">
                             <div v-for="animal in serverAnimals" class="col-lg-4 col-md-6">
-                                <a v-bind:href="'detail.html?animal_subid=' + animal.animal_subid" target="_blank">
+                                <a v-on:click="routerPush(animal.animal_subid)">
                                     <div class="single_service">
                                         <div class="service_thumb d-flex align-items-center justify-content-center">
                                             <div class="album_file">
@@ -292,38 +275,59 @@
         </div>
     </footer>
     <!-- footer_end  -->
-    <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script>
-
-    <!--contact js-->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-
-    <script src="js/main.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
-
-    <script src="js/myVue.js"></script>
 </body>
 </html>
+<!-- JS here -->
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+
+<!--my js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
+<!--<script src="https://unpkg.com/vue-router"></script>-->
+<script src="js/myVue.js"></script>
+
+<!--contact js-->
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/main.js"></script>
+
+<script src="js/nice-select.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/scrollIt.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+
+<script>
+    // 渲染後刷新
+    setTimeout(function () {
+        $('.form-select select').niceSelect('update')
+    }, 350);
+
+    $(document).ready(function () {
+        // 選取縣市時，除對應外之收容所全部隱藏
+        $('#animalAreaPkid').change(function () {
+            var $area = $('#animalAreaPkid .current');
+            var defaultAreaText = "寵物所在縣市";
+            var defaultShelterText = "所屬收容所";
+
+            $('#animalShelter select').val('');
+            $('#animalShelter .option').show();
+
+            $('#animalShelter .current').text(defaultShelterText);
+
+            if ($area.text() !== defaultAreaText) {
+                // 過濾外縣市的收容所
+                $('#animalShelter .option').filter(function () {
+                    $(this).toggle($(this).text().indexOf($area.text()) > -1)
+                }).hide();
+            }
+        });
+    });
+
+
+</script>

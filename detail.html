@@ -73,26 +73,26 @@
                                         <span>We care your pet </span> <br>
                                         As you care
                                     </h3>-->
-                                    <!--¤J©Ò¤Ñ¼Æ¡G{{}} Now - animal_createtime-->
-                                    <!--´¹¤ù¸¹½X¡G{{}}
-                                    ¶i©Ò­ì¦]¡G{{}}-->
-                                    <p>¤J©Ò¤é´Á¡G{{animal.animal_createtime}}</p>
-                                    <!--<p>¬O§_¶}©ñ»{»â¾i¡G{{}}¾A¦X»{¾i</p>-->
-                                    <p>¦¬®e½s¸¹¡G{{animal.animal_subid}}<br/>(­Y­n¦¬¾i½Ğ½Æ»s¦¹½s¸¹)</p>
-                                    <p>°Êª«§O¡G{{animal.animal_kind}}</p>
-                                    <!--<p>°Êª««~ºØ¡G²VºØ¿ß</p>-->
-                                    <p>¤ò¦â¡G{{animal.animal_colour}}</p>
-                                    <!--<p>¨Ó·½¦æ¬F°Ï¡G{{}}animal_area_pkid ¡÷</p>-->
-                                    <p>°Êª«©Ê§O¡G{{ animal.animal_sex == "M"? "¤½": animal.animal_sex == "F" ? "¥À" : "¥¼¿é¤J"}}</p>
-                                    <!--<p>°Êª«¦W¡G{{}}</p>-->
+                                    <!--å…¥æ‰€å¤©æ•¸ï¼š{{}} Now - animal_createtime-->
+                                    <!--æ™¶ç‰‡è™Ÿç¢¼ï¼š{{}}
+                                    é€²æ‰€åŸå› ï¼š{{}}-->
+                                    <p>å…¥æ‰€æ—¥æœŸï¼š{{animal.animal_createtime}}</p>
+                                    <!--<p>æ˜¯å¦é–‹æ”¾èªé ˜é¤Šï¼š{{}}é©åˆèªé¤Š</p>-->
+                                    <p>æ”¶å®¹ç·¨è™Ÿï¼š{{animal.animal_subid}}<br/>(è‹¥è¦æ”¶é¤Šè«‹è¤‡è£½æ­¤ç·¨è™Ÿ)</p>
+                                    <p>å‹•ç‰©åˆ¥ï¼š{{animal.animal_kind}}</p>
+                                    <!--<p>å‹•ç‰©å“ç¨®ï¼šæ··ç¨®è²“</p>-->
+                                    <p>æ¯›è‰²ï¼š{{animal.animal_colour}}</p>
+                                    <!--<p>ä¾†æºè¡Œæ”¿å€ï¼š{{}}animal_area_pkid â†’</p>-->
+                                    <p>å‹•ç‰©æ€§åˆ¥ï¼š{{ animal.animal_sex == "M"? "å…¬": animal.animal_sex == "F" ? "æ¯" : "æœªè¼¸å…¥"}}</p>
+                                    <!--<p>å‹•ç‰©åï¼š{{}}</p>-->
 
-                                    <p>¤½§i¦¬®e©Ò¡G{{animal.animal_place}}   </p>
-                                    <p>¦¬®e©Ò¹q¸Ü¡G{{animal.shelter_tel }}   </p>
-                                    <p>¦¬®e©Ò¦a§}¡G{{animal.shelter_address}}</p>
+                                    <p>å…¬å‘Šæ”¶å®¹æ‰€ï¼š{{animal.animal_place}}   </p>
+                                    <p>æ”¶å®¹æ‰€é›»è©±ï¼š{{animal.shelter_tel }}   </p>
+                                    <p>æ”¶å®¹æ‰€åœ°å€ï¼š{{animal.shelter_address}}</p>
                                     <p>
-                                        ´y­z¡G{{animal.animal_remark}}
+                                        æè¿°ï¼š{{animal.animal_remark}}
                                     <p>
-                                        <a href="https://asms.coa.gov.tw/AmlApp/Admin_A01/OutApplyEdit.aspx" target="_blank" class="boxed-btn3">§Ú­n»â¾i</a>
+                                        <a href="https://asms.coa.gov.tw/AmlApp/Admin_A01/OutApplyEdit.aspx" target="_blank" class="boxed-btn3">æˆ‘è¦é ˜é¤Š</a>
                                     </p>
                                 </div>
                             </div>
@@ -108,7 +108,6 @@
 </body>
 </html>
 <script type="text/javascript">
-
     const cors = 'https://cors-anywhere.herokuapp.com/'; // use cors-anywhere to fetch api data
     const url = 'https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL';
 
@@ -133,8 +132,8 @@
 
 
             var urlGet = '';
-            if (this.$route.query.animal_subid !== 'undefined')
-                urlGet = url + "&animal_subid=" + this.$route.query.animal_subid;
+            if (localStorage.getItem('subID') !== 'undefined')
+                urlGet = url + "&animal_subid=" + localStorage.getItem('subID');
 
             urlGet = urlGet + "&$top=10&$skip=0";
 
